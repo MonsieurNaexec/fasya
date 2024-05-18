@@ -28,7 +28,6 @@ function App() {
         state.currentAction == Action.VOTE
       ) {
         setVoteFor([]);
-        window.navigator.vibrate([200, 100, 300]);
       }
       if (appState.players.some((p) => !p.ingame && voteFor.includes(p.id)))
         setVoteFor([]);
