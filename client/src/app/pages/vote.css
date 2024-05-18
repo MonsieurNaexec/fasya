@@ -1,0 +1,14 @@
+.timer {
+  animation-name: timer-animation;
+  animation-duration: 45s;
+  animation-timing-function: linear;
+}
+
+@keyframes timer-animation {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
