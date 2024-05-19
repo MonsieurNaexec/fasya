@@ -6,6 +6,26 @@ const { Server } = require("socket.io");
 const path = require("path");
 const io = new Server(server);
 const basicAuth = require("express-basic-auth");
+// const { Server: WSServer, WebSocket } = require("ws");
+// const companion = new WSServer({ server });
+
+// companion.on("error", (e) => {
+//   console.error(e);
+// });
+
+// companion.on("connection", (sock) => {
+//   sendCompanion([votes[0] ?? 0, votes[1] ?? 0, votes[2] ?? 0, votes[3] ?? 0]);
+//   console.log("companion", sock.readyState);
+// });
+
+// const sendCompanion = (data) => {
+//   console.log("clients", companion.clients);
+//   companion.clients.forEach(function each(client) {
+//     if (client.readyState === WebSocket.OPEN) {
+//       client.send(data);
+//     }
+//   });
+// };
 
 const PORT = process.env.PORT || 3030;
 
@@ -122,6 +142,7 @@ const sendState = () => {
 };
 const sendVotes = () => {
   io.to("admins").emit("votes", votes);
+  //sendCompanion([votes[0] ?? 0, votes[1] ?? 0, votes[2] ?? 0, votes[3] ?? 0]);
 };
 const updateVotes = () => {
   const guests = io.sockets.adapter.rooms.get("guests");

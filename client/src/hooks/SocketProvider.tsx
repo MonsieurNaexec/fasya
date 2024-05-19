@@ -30,6 +30,7 @@ export const useConnections = () => {
 export const useTimer = () => {
   const [time, setTime] = useState(0);
   const handleTimerChange = (time: number) => setTime(time);
+  socket.emit("timer");
   useEffect(() => {
     socket.on("timer", handleTimerChange);
     return () => {

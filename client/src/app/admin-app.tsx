@@ -15,7 +15,7 @@ export enum Action {
 export type Player = { name: string; ingame: boolean; id: number };
 export type AppState = { currentAction: Action; players: Player[] };
 
-const timeToString = (time: number) =>
+export const timeToString = (time: number) =>
   `${Math.floor(time / 60)}:${(time % 60).toString().padStart(2, "0")}`;
 
 function AdminApp() {

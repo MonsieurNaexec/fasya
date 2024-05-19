@@ -13,6 +13,7 @@ export default defineConfig((configEnv) => {
         input: {
           app: resolve(__dirname, "index.html"),
           admin: resolve(__dirname, "admindashboard.html"),
+          timer: resolve(__dirname, "timer.html"),
         },
       },
     },
